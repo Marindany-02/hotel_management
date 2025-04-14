@@ -1,0 +1,220 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* POS Page Layout */
+.pos-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 20px auto;
+    gap: 20px;
+    align-items: stretch; /* Ensures both sections have equal height */
+}
+
+/* Left Panel (Product Categories & Product List) */
+.pos-left {
+    flex: 3;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    min-height: 600px; /* Ensures a minimum height */
+    display: flex;
+    flex-direction: column;
+}
+
+.pos-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-btn {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.category-btn:hover {
+    background: #2980b9;
+}
+
+.category-btn.active {
+    background: #2ecc71;
+}
+
+/* Product List Grid */
+.pos-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+/* Product Cards */
+.product-card {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-card h4 {
+    font-size: 14px;
+    margin: 10px 0 5px;
+}
+
+.product-card .price {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Right Panel (Cart & Payment Section) */
+.pos-right {
+    flex: 2;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    min-height: 600px; /* Matches left panel */
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-items {
+    min-height: 100px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #888;
+}
+
+.empty-cart-message i {
+    font-size: 40px;
+    color: #ccc;
+}
+
+.cart-summary {
+    margin: 15px 0;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    padding: 5px 0;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    font-size: 18px;
+    border-top: 2px solid #ddd;
+    padding-top: 10px;
+}
+
+/* Payment Buttons */
+.payment-methods {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.payment-btn {
+    flex: 1;
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.payment-btn i {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.payment-btn:hover {
+    background: #219150;
+}
+
+.payment-btn[data-method="cash"] {
+    background: #27ae60;
+}
+
+.payment-btn[data-method="card"] {
+    background: #2980b9;
+}
+
+.payment-btn[data-method="room"] {
+    background: #8e44ad;
+}
+
+/* Complete Sale Button */
+#complete-sale {
+    width: 100%;
+    padding: 12px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#complete-sale:hover {
+    background: #c0392b;
+}
+
+#complete-sale:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pos-container {
+        flex-direction: column;
+    }
+    .pos-products {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
